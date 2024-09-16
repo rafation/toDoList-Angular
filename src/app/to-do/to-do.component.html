@@ -1,0 +1,25 @@
+<div class="container">
+
+    <div class="app">
+        <h1 class="title">To Do List</h1>
+
+        <div class="row">
+            <input id="input" class="inputBox" type="text" [(ngModel)]="tarefa" placeholder="Insira a tarefa">
+            <button (click)="addTarefa()" class="addTarefa" id="btn">Add</button>
+            <button class="resetList" id="resetList" (click)="clearList()">Clear</button>      
+        </div>
+        
+        <ul id="ulList" class="list">
+            <li *ngFor="let item of itemsList; let i = index" class="item">
+                <div class="item">
+                    {{ item }}
+                </div>
+                <button class="removeBtn" (click)="removerTarefa(i)">X</button>
+            </li>
+        </ul>
+
+
+    </div>
+
+
+</div>
